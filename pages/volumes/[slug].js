@@ -25,7 +25,7 @@ export default function VolumeDetail() {
   `;
 
   return (
-    <StyledDiv $backgroundcolor={color}>
+    <StyledDiv>
       <Link href="/volumes">← All Volumes</Link>
       <h1>{title}</h1>
       <p>{description}</p>
