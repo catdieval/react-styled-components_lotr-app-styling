@@ -1,4 +1,10 @@
 import { createGlobalStyle } from "styled-components";
+import { Lora } from "next/font/google";
+
+const lora = Lora({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+});
 
 export const GlobalStyle = createGlobalStyle`
   *,
@@ -14,7 +20,7 @@ export const GlobalStyle = createGlobalStyle`
   --color-smoke: #d4d1cd;
 
   /* Font styles */
-  --font-family: serif;
+  --font-family: ${lora.style.fontFamily}, serif; // serif;
   /*
     use like:
     font: var(--font-body);
