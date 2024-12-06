@@ -3,6 +3,9 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { volumes } from "../../lib/data";
 import styled from "styled-components";
+import ArrowLeft from "../../public/icons/arrow-left.svg";
+import ArrowRight from "../../public/icons/arrow-right.svg";
+import ChevronLeft from "../../public/icons/chevron-left.svg";
 
 export default function VolumeDetail() {
   const router = useRouter();
@@ -26,7 +29,7 @@ export default function VolumeDetail() {
 
   return (
     <StyledDiv>
-      <Link href="/volumes">← All Volumes</Link>
+      <Link href="/volumes"><ChevronLeft /> All Volumes</Link>
       <h1>{title}</h1>
       <p>{description}</p>
       <ul>
@@ -45,14 +48,14 @@ export default function VolumeDetail() {
       {previousVolume ? (
         <div>
           <Link href={`/volumes/${previousVolume.slug}`}>
-            ← Previous Volume: {previousVolume.title}
+            <ArrowLeft /> Previous Volume: {previousVolume.title}
           </Link>
         </div>
       ) : null}
       {nextVolume ? (
         <div>
           <Link href={`/volumes/${nextVolume.slug}`}>
-            Next Volume: {nextVolume.title} →
+            Next Volume: {nextVolume.title} <ArrowRight />
           </Link>
         </div>
       ) : null}
