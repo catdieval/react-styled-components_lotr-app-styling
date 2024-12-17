@@ -50,4 +50,10 @@ export const GlobalStyle = createGlobalStyle`
     font-family: system-ui;
     font-family: ${lora.style.fontFamily};
   }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 `;
