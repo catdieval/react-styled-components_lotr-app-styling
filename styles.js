@@ -56,4 +56,16 @@ export const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     gap: 10px;
   }
+
+  button {
+    font-size: 15px;
+    padding: 6px;
+    cursor: pointer;
+  }
+
+  [data-theme = "dark"] {
+    background-color: rgb(50, 51, 58);
+    color: white;
+  }
+
 `;
