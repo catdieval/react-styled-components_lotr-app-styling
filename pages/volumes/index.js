@@ -2,12 +2,16 @@ import Link from "next/link";
 import { introduction, volumes } from "../../lib/data";
 import styled from "styled-components";
 
-const StyledLink = styled(Link)`
+const StyledBookLink = styled(Link)`
   box-shadow: var(--box-shadow-book);
 
   &:hover {
     box-shadow: var(--box-shadow-book--hover);
   }
+`;
+
+const StyledLink = styled(Link)`
+  font-size: 18px;
 `;
 
 export default function Volumes() {
@@ -18,10 +22,12 @@ export default function Volumes() {
       <ul>
         {volumes.map((volume) => (
           <li key={volume.id}>
-            <StyledLink href={`/volumes/${volume.slug}`}>{volume.title}</StyledLink>
+            <StyledBookLink href={`/volumes/${volume.slug}`}>{volume.title}</StyledBookLink>
           </li>
         ))}
       </ul>
+      <br/>
+      <StyledLink href="/">Go back to startpage</StyledLink>
     </>
   );
 }
