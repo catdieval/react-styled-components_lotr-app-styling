@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { introduction, volumes } from "../../lib/data";
 import styled from "styled-components";
+import StyledLink from "@/Components/StyledLink";
 
 const StyledBookLink = styled(Link)`
   box-shadow: var(--box-shadow-book);
@@ -8,10 +9,6 @@ const StyledBookLink = styled(Link)`
   &:hover {
     box-shadow: var(--box-shadow-book--hover);
   }
-`;
-
-const StyledLink = styled(Link)`
-  font-size: 18px;
 `;
 
 export default function Volumes() {
