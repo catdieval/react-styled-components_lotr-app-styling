@@ -27,9 +27,13 @@ export default function VolumeDetail() {
     background-color: ${color};
   `;
 
+  const StyledLink = styled(Link)`
+    font-size: 18px;
+  `;
+
   return (
     <StyledDiv>
-      <Link href="/volumes"><ChevronLeft /> All Volumes</Link>
+      <StyledLink href="/volumes"><ChevronLeft /> All Volumes</StyledLink>
       <h1>{title}</h1>
       <p>{description}</p>
       <ul>
@@ -47,16 +51,16 @@ export default function VolumeDetail() {
       />
       {previousVolume ? (
         <div>
-          <Link href={`/volumes/${previousVolume.slug}`}>
+          <StyledLink href={`/volumes/${previousVolume.slug}`}>
             <ArrowLeft /> Previous Volume: {previousVolume.title}
-          </Link>
+          </StyledLink>
         </div>
       ) : null}
       {nextVolume ? (
         <div>
-          <Link href={`/volumes/${nextVolume.slug}`}>
+          <StyledLink href={`/volumes/${nextVolume.slug}`}>
             Next Volume: {nextVolume.title} <ArrowRight />
-          </Link>
+          </StyledLink>
         </div>
       ) : null}
     </StyledDiv>
