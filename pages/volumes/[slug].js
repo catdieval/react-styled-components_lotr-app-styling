@@ -1,11 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { volumes } from "../../lib/data";
 import styled from "styled-components";
 import ArrowLeft from "../../public/icons/arrow-left.svg";
 import ArrowRight from "../../public/icons/arrow-right.svg";
 import ChevronLeft from "../../public/icons/chevron-left.svg";
+import StyledLink from "@/Components/StyledLink";
 
 export default function VolumeDetail() {
   const router = useRouter();
@@ -25,10 +25,6 @@ export default function VolumeDetail() {
 
   const StyledDiv = styled.div`
     background-color: ${color};
-  `;
-
-  const StyledLink = styled(Link)`
-    font-size: 18px;
   `;
 
   return (
