@@ -25,26 +25,32 @@ export default function VolumeDetail() {
 
   const StyledDiv = styled.div`
     background-color: ${color};
+    padding-left: 10px;
+    padding-top: 0;
+    padding-bottom: 5px;
   `;
 
   return (
-    <StyledDiv>
+    <>
+      <br/><br/>
       <StyledLink href="/volumes"><ChevronLeft /> All Volumes</StyledLink>
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <ul>
-        {books.map(({ ordinal, title }) => (
-          <li key={title}>
-            {ordinal}: <strong>{title}</strong>
-          </li>
-        ))}
-      </ul>
-      <Image
-        src={cover}
-        alt={`Cover image of ${title}`}
-        width={140}
-        height={230}
-      />
+      <StyledDiv>
+        <h1>{title}</h1>
+        <p>{description}</p>
+        <ul>
+          {books.map(({ ordinal, title }) => (
+            <li key={title}>
+              {ordinal}: <strong>{title}</strong>
+            </li>
+          ))}
+        </ul>
+        <Image
+          src={cover}
+          alt={`Cover image of ${title}`}
+          width={140}
+          height={230}
+        />
+      </StyledDiv>
       {previousVolume ? (
         <div>
           <StyledLink href={`/volumes/${previousVolume.slug}`}>
@@ -59,6 +65,6 @@ export default function VolumeDetail() {
           </StyledLink>
         </div>
       ) : null}
-    </StyledDiv>
+    </>
   );
 }
